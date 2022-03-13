@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Sign from './components/pages/sign_InUp';
+import PostsPage from './components/pages/postsPage';
+import SettingsPage from './components/pages/settingsPage';
+import NewPostPage from './components/pages/newPostPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Sign/>}></Route>
+          <Route path="post" element={<PostsPage/>} ></Route>
+          <Route path="settings" element={<SettingsPage/>} ></Route>
+          <Route path="newpost" element={<NewPostPage/>}></Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
-
+// nessa barrett feat. jxdn la di die | ne bruklin | na tviche
+//.toLocaleDateString('en-GB')
 export default App;
